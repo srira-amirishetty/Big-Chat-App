@@ -22,8 +22,7 @@ export const startSendOtpConsumer = async()=>{
         try{
             const {to,subject,body} = JSON.parse(msg.content.toString())
             const transporter = nodemailer.createTransport({
-                host:"smtp-gmail.com",
-                port:465,
+                service:"gmail",
                 auth:{
                     user:process.env.USER,
                     pass:process.env.PASSWORD
